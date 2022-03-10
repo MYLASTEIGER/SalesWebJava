@@ -1,7 +1,8 @@
 package com.maxtrain.bootcamp.sales.order;
-
+//* means all @'s needed?
 import javax.persistence.*;
-
+//order page holds the content for defining the properties of the order class, 
+// 
 import com.maxtrain.bootcamp.sales.cusotmer.Customer;
 
 @Entity
@@ -14,6 +15,8 @@ public class Orders {
 	private String description;
 	@Column(columnDefinition = "decimal(9,2) NOT NULL")
 	private double total;
+	@Column(length=30, nullable =false)
+	private String status;
 	
 	@ManyToOne(optional=false)
 	@JoinColumn(name="customerId", columnDefinition="int")
@@ -21,6 +24,17 @@ public class Orders {
 
 	public Orders() {}
 	
+	
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
 	public int getId() {
 		return id;
 	}

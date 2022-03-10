@@ -2,7 +2,7 @@ package com.maxtrain.bootcamp.sales.cusotmer;
 
 import javax.persistence.*;
 import javax.persistence.Table;
-
+//important to run
 @Entity
 @Table(uniqueConstraints=@UniqueConstraint(name="UIDX_code", columnNames= {"code"}))
 
